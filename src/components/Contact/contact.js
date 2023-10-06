@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import walmart from '../../assets/walmart.png';
 import adobe from '../../assets/adobe.png';
 import microsoft from '../../assets/microsoft.png';
@@ -8,8 +8,22 @@ import twitterIcon from '../../assets/twitter.png';
 import youtubeIcon from '../../assets/youtube.png';
 import instagramIcon from '../../assets/instagram.png';
 import './contact.css';
+import emailjs from '@emailjs/browser';
+
 
 const Contact = () => {
+    const form = useRef();
+    const sendEmail = (e) => {
+        e.preventDefault();
+        emailjs.sendForm('service_6pahkfg', 'template_6gjnqu9', form.current, 'vLT0229N59UYjRwtV')
+          .then((result) => {
+              console.log(result.text);
+              e.target.reset();
+              alert('Email send!')
+            }, (error) => {
+              console.log(error.text);
+            });
+      };
   return (
     <section id="contactPage">
         <div id="clients">
@@ -26,9 +40,9 @@ const Contact = () => {
         <div id="contact">
             <h1 className="contactPageTitle">Contact Me</h1>
             <span className="contactDesc">Fill out the form below to discuss any work opportunities,</span>
-            <form action="" className="contactForm">
-                <input type="text" className="name" placeholder='Your Name'/>
-                <input type="email" className="email" placeholder='Your Email'/>
+            <form action="" className="contactForm" ref={form} onSubmit={sendEmail}>
+                <input type="text" className="name" placeholder='Your Name' name='from_name'/>
+                <input type="email" className="email" placeholder='Your Email' name='from_email'/>
                 <textarea name="message" className='message' id="" rows="5" placeholder='Your Message'></textarea>
                 <button type='submit' value='send' className='submitBtn' >Submit</button>
                 <div className="links">
