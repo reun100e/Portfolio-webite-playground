@@ -1,5 +1,6 @@
 #intro {
   height: calc(100vh - 4rem);
+  max-height: 100rem;
   width: 100vw;
   max-width: 75rem;
   margin: 0 auto;
@@ -11,6 +12,7 @@
   position: absolute;
   top: -4rem;
   height: 100vh;
+  max-height: 100rem;
   right: 0;
   object-fit: cover;
   z-index: -1;
@@ -36,6 +38,7 @@
 
 .introContent {
   height: 100vh;
+  max-height: 100rem;
   width: 100vw;
   padding: 2rem;
   font-size: 3rem;
