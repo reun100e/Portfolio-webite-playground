@@ -1,5 +1,5 @@
 .navbar {
-    background: rgb(30, 30, 30);
+    background: var(--bg);
     height: 5rem;
     width: 100vw;
     max-width: 75rem;
@@ -25,14 +25,14 @@
 }
 
 .desktopMenuListItem:hover {
-    color: yellow;
+    color: var(--hover);
     padding-bottom: 0.5rem;
-    border-bottom: 3px solid yellow;
+    border-bottom: 3px solid var(--hover);
 }
 
 .desktopMenuBtn {
-    background: white;
-    color: black;
+    background: var(--white);
+    color: var(--black);
     border: none;
     display: flex;
     align-items: center;
@@ -49,9 +49,9 @@
 }
 
 .active {
-    color: yellow;
+    color: var(--hover);
     padding-bottom: 0.5rem;
-    border-bottom: 3px solid yellow;
+    border-bottom: 3px solid var(--hover);
 }
 
 .mobMenu {
@@ -82,13 +82,13 @@
     padding: 0.5rem;
     height: fit-content;
     min-width: 15rem;
-    background: rgb(40, 40, 40);
+    background: var(--nav-bg);
     border-radius: 1rem;
 }
 
 .ListItem {
-    color: white;
+    color: var(--white);
     padding: 0.5rem 3rem;
     margin: 0.25rem;
-    background: rgb(30, 30, 30);
+    background: var(--bg);
 }

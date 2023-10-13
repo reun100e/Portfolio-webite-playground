@@ -13,6 +13,8 @@ import {
   Pagination,
   Navigation,
   Autoplay,
+  Mousewheel,
+  Zoom,
 } from "swiper/modules";
 
 import slide_image_1 from "../../assets/portfolio-1.png";
@@ -32,21 +34,20 @@ const Services = () => {
       <Swiper
         className="mySwiper"
         // direction={"vertical"}
+        lazy={true}
+        zoom={true}
+        // mousewheel={true}
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={3}
         spaceBetween={0}
         breakpoints={{
-          100: {
+          1: {
             slidesPerView: 1,
             spaceBetween: 10,
           },
-          640: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          768: {
+          590: {
             slidesPerView: 2,
             spaceBetween: 40,
           },
@@ -67,15 +68,27 @@ const Services = () => {
           modifier: 1,
           slideShadows: true,
         }}
-        pagination={{ el: ".swiper-pagination", clickable: true }}
+        pagination={{
+          el: ".swiper-pagination",
+          dynamicBullets: false,
+          clickable: true,
+        }}
         navigation={{
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
           clickable: true,
         }}
-        modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
+        modules={[
+          EffectCoverflow,
+          Pagination,
+          Navigation,
+          Autoplay,
+          Mousewheel,
+          Zoom,
+        ]}
         style={{
-          "--swiper-pagination-color": "yellow",
+          "--swiper-navigation-color": "#fff",
+          "--swiper-pagination-color": "white",
           "--swiper-pagination-bullet-inactive-color": "rgb(40,40,40)",
           "--swiper-pagination-bullet-inactive-opacity": "1",
           "--swiper-pagination-bullet-size": "0.8rem",
@@ -83,22 +96,34 @@ const Services = () => {
         }}
       >
         <SwiperSlide>
-          <img src={slide_image_1} alt="slide_image" />
+          <div className="swiper-zoom-container">
+            <img src={slide_image_1} alt="slide_image" loading="lazy" />
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slide_image_2} alt="slide_image" />
+          <div className="swiper-zoom-container">
+            <img src={slide_image_2} alt="slide_image" loading="lazy" />
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slide_image_3} alt="slide_image" />
+          <div className="swiper-zoom-container">
+            <img src={slide_image_3} alt="slide_image" loading="lazy" />
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slide_image_4} alt="slide_image" />
+          <div className="swiper-zoom-container">
+            <img src={slide_image_4} alt="slide_image" loading="lazy" />
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slide_image_5} alt="slide_image" />
+          <div className="swiper-zoom-container">
+            <img src={slide_image_5} alt="slide_image" loading="lazy" />
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slide_image_6} alt="slide_image" />
+          <div className="swiper-zoom-container">
+            <img src={slide_image_6} alt="slide_image" loading="lazy" />
+          </div>
         </SwiperSlide>
 
         <div className="slider_controller">
@@ -110,7 +135,6 @@ const Services = () => {
           </div> */}
           <div className="swiper-pagination"></div>
         </div>
-
       </Swiper>
     </section>
   );

@@ -54,7 +54,7 @@
 }
 
 .introName {
-  color: yellow;
+  color: var(--nav-bg);
 }
 
 .introPara {
@@ -64,15 +64,27 @@
 }
 
 .btn {
-  background: white;
+  background: var(--nav-bg);
   margin: 1rem 0;
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .btnImg {
   object-fit: cover;
   margin: 0 0.25rem;
   height: 1rem;
+}
+
+.btn_content {
+  padding:0 0.5rem;
+}
+
+.wa_icon {
+  object-fit: cover;
+  height: 1.5rem;
 }

@@ -1,15 +1,23 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    background: transparent;
-    font-family: 'Poppins', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  background: transparent;
+  font-family: "Poppins", sans-serif;
+
+  --white: #ffffff;
+  --grey: #ecedf3;
+  --black: #080808;
+
+  --bg: #5A2A38;
+  --nav-bg: #FBEADA;
+  --hover: #f8ab37;
 }
 
 body {
-    background: rgb(30, 30, 30);
-    color: white;
-    overflow: hidden;
-    overflow-y: scroll;
+  background: var(--bg);
+  color: var(--white);
+  overflow: hidden;
+  overflow-y: scroll;
 }
